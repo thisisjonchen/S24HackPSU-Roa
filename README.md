@@ -5,11 +5,11 @@ Full Documentation: [Click Here](https://docs.google.com/document/d/1GKJtoUw5x7j
 ![cover](Promo.png)
 
 ## Mission Statement
-To make driving smarter. 
+To leverage artificial intelligence, computer vision, and innovative road threat detection to make traveling safer.
+
 
 ## Our Goal
-To bring the safety features of self-driving car technology to everyone across the socio-economic spectrum. Our mission statement is to leverage artificial intelligence, computer vision, and innovative road threat detection to make traveling safer.
-
+To bring the safety features of self-driving car technology to everyone across the socio-economic spectrum.
 ## Market
 The common driver and commuter.
 
