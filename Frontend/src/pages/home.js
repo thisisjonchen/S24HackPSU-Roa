@@ -9,7 +9,7 @@ function Home() {
                     <div className="stack">
                         <h2>[Roa]</h2>
                         <h1>Drive smarter,<span style={{fontWeight:"normal"}}><br/>not harder.</span></h1>
-                        <button className="button launch" onClick={() => window.location.replace("http://localhost:3000/record")}>Launch</button>
+                        <button className="button launch" onClick={() => window.location.replace("https://www.roai.tech/record")}>Launch</button>
                     </div>
                 </div>
                 <div className="right column alignMiddle">
@@ -19,7 +19,7 @@ function Home() {
                 </div>
             </div>
             <div className="descriptionContainer alignMiddle stack">
-                <div className="description">
+                <div className="description" style={{paddingBottom:"50px"}}>
                     <div className="column alignMiddle">
                         <div className="stack">
                             <h1>Let's face it,<span style={{fontWeight:"normal"}}><br/>you're clueless.</span></h1>
@@ -51,7 +51,7 @@ function Home() {
                     <div className="stack alignMiddle">
                         <h2 className="centerText">[Roa]</h2>
                         <h1 className="centerText">Drive smarter,<span style={{fontWeight:"normal"}}><br/>not harder.</span></h1>
-                        <button className="button launch" onClick={() => window.location.replace("http://localhost:3000/record")}>Launch Now</button>
+                        <button className="button launch" onClick={() => window.location.replace("https://www.roai.tech/record")}>Launch Now</button>
                         <h6 className="centerText">Built with ❤️ from Happy Valley</h6>
                     </div>
                 </div>

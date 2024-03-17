@@ -68,13 +68,6 @@ body {
   display: none
 }
 
-@media (min-width: 1201px) {
-  .right {
-    display: flex;
-    justify-content: flex-start;
-  }
-}
-
 .landingContainer {
   margin: 20px 0 20px 0;
   height: 95vh;
@@ -98,7 +91,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 80vh;
-  width: 80vw;
+  width: 100%;
 }
 
 .stack {
@@ -165,4 +158,14 @@ h2 {
   background-image: url("https://i.stack.imgur.com/MnyxU.gif");
   background-repeat: no-repeat;
   background-position: center;
+}
+
+@media (min-width: 1201px) {
+  .right {
+    display: flex;
+    justify-content: flex-start;
+  }
+  .description {
+    width: 80vw;
+  }
 }
