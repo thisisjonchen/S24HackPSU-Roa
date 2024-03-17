@@ -1,6 +1,10 @@
 import vehicle_counting
 import requests 
-from flask import Flask, jsonify
+from flask import Flask, request, jsonify
+from flask_cors import CORS
+from keras.models import load_model
+import cv2
+import numpy as np
 
 app = Flask(__name__)
 
