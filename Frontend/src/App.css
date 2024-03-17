@@ -1,0 +1,168 @@
+body {
+  background-color: black;
+  background-size: 75px 75px;
+  background-image:
+          linear-gradient(to right, grey 1px, transparent 1px),
+          linear-gradient(to bottom, grey 1px, transparent 1px);
+  animation: scrollBackground 10s linear infinite;
+  overflow-x: hidden;
+}
+
+@keyframes scrollBackground {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 200px;
+  }
+}
+
+/* --alignment, visibility-- */
+.alignMiddle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hide {
+  display: none;
+}
+
+.no-shadow {
+  background-image: none !important;
+}
+
+/* --assets-- */
+.logo {
+  width: 75px;
+  height: 75px
+}
+
+.placeholder {
+  height: 90%;
+  width: 90%;
+  background-image: radial-gradient(black , transparent 65%);
+  border-radius: 30px;
+}
+
+.mockup {
+  width: 50%
+}
+
+/* --containers-- */
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  padding: 50px;
+}
+
+.right {
+  display: none
+}
+
+@media (min-width: 1201px) {
+  .right {
+    display: flex;
+    justify-content: flex-start;
+  }
+}
+
+.landingContainer {
+  margin: 20px 0 20px 0;
+  height: 95vh;
+  width: 95vw;
+  border-radius: 20px;
+  background-color: #D9D9D9;
+  overflow: hidden;
+}
+
+.descriptionContainer {
+  margin-bottom: 20px;
+  height: 200vh;
+  width: 95vw;
+  border-radius: 20px;
+  background-color: #D9D9D9;
+  overflow: hidden;
+}
+
+.description {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  width: 80vw;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+}
+
+.videoContainer {
+  display: flex;
+}
+
+.recording {
+  height: 90vh;
+  border-radius: 20px;
+}
+
+/* --fonts & buttons-- */
+h1 {
+  font-size: 4em;
+  font-weight: bold;
+  padding: 0;
+  margin-bottom: 40px;
+  margin-top: 10px;
+}
+
+h2 {
+  font-size: 2em;
+  font-weight: normal;
+  margin: 0;
+}
+
+.centerText {
+  text-align: center;
+}
+
+.button {
+  cursor: pointer;
+  width: 100%;
+  border-radius: 20px;
+  font-size: 16px;
+  padding: 10px;
+  border-color: transparent;
+  font-weight: bold;
+  color: white;
+}
+
+.stop {
+  margin-top: 5px;
+  background-color: #ff4b4b;
+}
+
+.launch {
+  width: 15em;
+  background-color: black;
+}
+
+#loading {
+  display: flex;
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(192, 192, 192, 0.5);
+  background-image: url("https://i.stack.imgur.com/MnyxU.gif");
+  background-repeat: no-repeat;
+  background-position: center;
+}
