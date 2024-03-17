@@ -42,16 +42,16 @@ risk_0 is the average total risk (half of max total risk) – eg; if conditions 
 if confidence is below 0, then it is saying conditions are safe 
 if confidence is above 0, then conditions are unsafe
 
-1. Prioritized what conditions are most important for the user to know from a scale from 1 to 5 (1 being non-important, 5 being the most important)
-  -Alert level (the severity of the weather alert) – 5
-    -If the alert is a level 4 (highest severity), flag the user with the weather event name
-  -Precipitation rate (how hard it’s raining in mm/h) – 4
-  -If it’s violently raining (> 50 mm/h), flag the user that it’s violently raining
-  -Icy road (if there's a black ice warning) – flag or no flag
-  -Road temperature (kelvin) – 2
-  -If the road temp is below freezing, return a 2
-  -Wind speed (meters/second) – 2
-  -Speed of the car is accounted as a multiplier
+1. Prioritized what conditions are most important for the user to know from a scale from 1 to 5 (1 being non-important, 5 being the most important) \
+  -Alert level (the severity of the weather alert) – 5 \
+    -If the alert is a level 4 (highest severity), flag the user with the weather event name \
+  -Precipitation rate (how hard it’s raining in mm/h) – 4 \
+  -If it’s violently raining (> 50 mm/h), flag the user that it’s violently raining \
+  -Icy road (if there's a black ice warning) – flag or no flag \
+  -Road temperature (kelvin) – 2 \
+  -If the road temp is below freezing, return a 2 \
+  -Wind speed (meters/second) – 2 \
+  -Speed of the car is accounted as a multiplier \
   -Since bad conditions can be handled if the speed limit is low, or if less worse conditions can still be dangerous because you are traveling quickly
 
 ## Challenges
