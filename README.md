@@ -36,7 +36,7 @@ Using your phone camera, it captures an image and is analyzed using a custom-tra
 GPS would be used to get conditions of the road and returns a confidence interval from -100 to 100 
 (-100 being very confident it is safe, 100 being very confident that it is dangerous) 
 1. Depending on certain conditions, it can instantly flag with 100 confidence (it can be multiple conditions) to create a message for the user to be cautious due to the flags \
-  -Eg; black ice warning has been given 
+  -e.g. black ice warning has been given 
 Calculated using the formula of |total risk - risk_0| / risk_0 \
   -total risk is determined by a decision matrix of road conditions \
   -risk_0 is the average total risk (half of max total risk) – eg; if conditions are ideal it'll be 0 - 8.5 = -100 \
@@ -56,22 +56,22 @@ If confidence is above 0, then conditions are unsafe
 Since bad conditions can be handled if the speed limit is low, or if less worse conditions can still be dangerous because you are traveling quickly
 
 ## Challenges
-Connecting the front/back end \
-Training the AI model \
- -Used a dataset that had 7.9 million images
+- Connecting the front/back end
+- Training the AI model
+- Used a dataset that had 7.9 million images
 
 ## Potential Features
-Incoroporate our app into google maps using AR \
-  -We can have users be prepared to be in a certain lane (Google maps may not recommend what lane you should be in
+Incorporate our app into Google Maps using AR
+- We can have users be prepared to be in a certain lane (Google maps may not recommend what lane you should be in
 so you are prepared ahead of time) 
 Allowing different users to be supported with the algorithms (cyclists, buses, trucks, etc)
 
+## Demo Steps for the Road Classification Model
+- Download the [Road Classification]([url](https://github.com/thisisjonchen/S24HackPSU-Roa/tree/main/Road%20Classification)https://github.com/thisisjonchen/S24HackPSU-Roa/tree/main/Road%20Classification) folder
+- Run the [classification_demo.py]([url](https://github.com/thisisjonchen/S24HackPSU-Roa/blob/main/Road%20Classification/classification_demo.py)https://github.com/thisisjonchen/S24HackPSU-Roa/blob/main/Road%20Classification/classification_demo.py) script
+- Open Google Earth and follow the program's window capture instructions
+- Watch the model work its magic!
+  
 ## Acknowledgements
 **The team:** Scott Garcia, Jon Chen, Vinh Ngo, Matt Witmer, Caleb Kendig\
 Made with ❤️ from Happy Valley
-
-## Demo Steps
-  -Download the [Road Classification]([url](https://github.com/thisisjonchen/S24HackPSU-Roa/tree/main/Road%20Classification)https://github.com/thisisjonchen/S24HackPSU-Roa/tree/main/Road%20Classification) folder\
-  -Run the [classification_demo.py]([url](https://github.com/thisisjonchen/S24HackPSU-Roa/blob/main/Road%20Classification/classification_demo.py)https://github.com/thisisjonchen/S24HackPSU-Roa/blob/main/Road%20Classification/classification_demo.py) script\
-  -Open Google Earth and follow the program's window capture instructions\
-  -Watch the model work its magic!
