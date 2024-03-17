@@ -1,4 +1,4 @@
-import condition_processing, is_dangerous
+import is_dangerous, ChatgptOutput
 
 
 if __name__ == '__main__':
@@ -11,34 +11,43 @@ if __name__ == '__main__':
     speed_limit = 45 #speed limit of the road the car is driving on
     alert_name = "" # a string which represents any possible weather condition
     #for getting whether or not the user is in a city
-    print("Given the condidtions: \nRoad temp is above freezing \nNo black ice \nHeavy rain \nSpeed limit: 45 \n we get a score of: ",end="")
-    print(is_dangerous.is_dangerous(road_temp, 
+    print("Given the condidtions: \nRoad temp is above freezing \nNo black ice \nHeavy rain \nSpeed limit: 45 \n \nWe get a score of: ",end="")
+    confidence = is_dangerous.is_dangerous(road_temp, 
                                             is_black_ice,
                                             alert_level,
                                             alert_name, 
                                             wind_speed, 
                                             precipitation_rate, 
-                                            speed_limit))
+                                            speed_limit)
+    print(confidence)
+    print("Our output message would be: ",end="")
+    ChatgptOutput.ChatGPT(confidence, 80)
     print()
     is_black_ice=16
     print("If we then declare black ice is on the road, we get: ",end="")
-    print(is_dangerous.is_dangerous(road_temp, 
+    confidence = is_dangerous.is_dangerous(road_temp, 
                                             is_black_ice,
                                             alert_level,
                                             alert_name, 
                                             wind_speed, 
                                             precipitation_rate, 
-                                            speed_limit))
+                                            speed_limit)
+    print(confidence)
+    print("Our output message would be: ",end="")
+    ChatgptOutput.ChatGPT(confidence, 100)
     print()
     speed_limit = 25
     print("If we then decrease the speed limit to 25mph, we get: ",end="")
-    print(is_dangerous.is_dangerous(road_temp, 
+    confidence = is_dangerous.is_dangerous(road_temp, 
                                             is_black_ice,
                                             alert_level,
                                             alert_name, 
                                             wind_speed, 
                                             precipitation_rate, 
-                                            speed_limit))
+                                            speed_limit)
+    print(confidence)
+    print("Our output message would be: ",end="")
+    ChatgptOutput.ChatGPT(confidence, -20)
     print()
     road_temp = 0
     alert_level = 4
@@ -46,14 +55,17 @@ if __name__ == '__main__':
     wind_speed = 13.5
     precipitation_rate = 61
     speed_limit = 35
-    print("If the earth freezes over and there's a massive blizzard, we get: ",end="")
-    print(is_dangerous.is_dangerous(road_temp, 
+    print("If the earth freezes over and there's a massive blizzard, by setting the speed limit to the average of 35mph we get: ",end="")
+    confidence = is_dangerous.is_dangerous(road_temp, 
                                             is_black_ice,
                                             alert_level,
                                             alert_name, 
                                             wind_speed, 
                                             precipitation_rate, 
-                                            speed_limit))
+                                            speed_limit)
+    print(confidence)
+    print("Our output message would be: ",end="")
+    ChatgptOutput.ChatGPT(confidence, 100)
     print()
     road_temp = 280
     alert_level = 0
@@ -63,40 +75,66 @@ if __name__ == '__main__':
     speed_limit = 35
     is_black_ice = 0
     print("When the earth melts back and the weather is clear, we get: ",end="")
-    print(is_dangerous.is_dangerous(road_temp, 
+    confidence = is_dangerous.is_dangerous(road_temp, 
                                             is_black_ice,
                                             alert_level,
                                             alert_name, 
                                             wind_speed, 
                                             precipitation_rate, 
-                                            speed_limit))
+                                            speed_limit)
+    print(confidence)
+    print("Our output message would be: ")
+    ChatgptOutput.ChatGPT(confidence, -100)
+    print("Notice how there is no message since our algorithm it somewhat confident there is little to no danger")
     print()
     precipitation_rate = 1
     print("As we increase the level of rainfall to fall within the 'Light Rain' category, confidence falls to: ",end="")
-    print(is_dangerous.is_dangerous(road_temp, 
+    confidence = is_dangerous.is_dangerous(road_temp, 
                                             is_black_ice,
                                             alert_level,
                                             alert_name, 
                                             wind_speed, 
                                             precipitation_rate, 
-                                            speed_limit))
+                                            speed_limit)
+    print(confidence)
+    print("Our output message would be: ")
+    ChatgptOutput.ChatGPT(confidence, -70)
     print()
     precipitation_rate = 3
-    print("Then to 'Moderate Rain', confidence falls to: ",end="")
-    print(is_dangerous.is_dangerous(road_temp, 
+    print("Then to 'Moderate Rain', confidence falls to: ")
+    confidence = is_dangerous.is_dangerous(road_temp, 
                                             is_black_ice,
                                             alert_level,
                                             alert_name, 
                                             wind_speed, 
                                             precipitation_rate, 
-                                            speed_limit))
+                                            speed_limit)
+    print(confidence)
+    print("Our output message would be: ")
+    ChatgptOutput.ChatGPT(confidence, -50)
     print()
     precipitation_rate = 8
     print("Then to 'Heavy Rain', confidence falls to: ",end="")
-    print(is_dangerous.is_dangerous(road_temp, 
+    confidence = is_dangerous.is_dangerous(road_temp, 
                                             is_black_ice,
                                             alert_level,
                                             alert_name, 
                                             wind_speed, 
                                             precipitation_rate, 
-                                            speed_limit))
+                                            speed_limit)
+    print(confidence)
+    print("Our output message would be: ")
+    ChatgptOutput.ChatGPT(confidence, -10)
+    print()
+    speed_limit=40
+    print("Just by increasing the speed limit by 5mph, we get a confidence of : ",end="")
+    confidence = is_dangerous.is_dangerous(road_temp, 
+                                            is_black_ice,
+                                            alert_level,
+                                            alert_name, 
+                                            wind_speed, 
+                                            precipitation_rate, 
+                                            speed_limit)
+    print(confidence)
+    print("Our output message would be: ",end="")
+    ChatgptOutput.ChatGPT(confidence, 20)
