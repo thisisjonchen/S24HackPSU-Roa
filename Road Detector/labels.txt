@@ -1,0 +1,4 @@
+0 Road
+1 Field
+2 Forest
+3 Inside
