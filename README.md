@@ -19,7 +19,7 @@ Analyzes historical accident data and patterns, traffic density, weather, and mo
 
 ## Tech Stack 
 **Front-end:** Javascript (React)\
-**Back-end:** Python (with OpenCV)\
+**Back-end:** Python (with Tensorflow, Flask, keras)\
 **Deployment:** Vercel (Frontend)\
 **APIs:** ChatGPT 3.5 Turbo (OpenAI), OpenWeather, Google Maps, Custom-Made AI (danger road detector)\
 **Assets:** https://i.stack.imgur.com/MnyxU.gif (loading)
