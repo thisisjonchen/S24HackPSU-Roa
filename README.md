@@ -61,7 +61,7 @@ Training the AI model \
  -Used a dataset that had 7.9 million images
 
 ## Potential Features
-Incoroporate our app into google maps using AR
+Incoroporate our app into google maps using AR \
   -We can have users be prepared to be in a certain lane (Google maps may not recommend what lane you should be in
 so you are prepared ahead of time) 
 Allowing different users to be supported with the algorithms (cyclists, buses, trucks, etc)
