@@ -48,7 +48,7 @@ def is_dangerous(road_temp, is_black_ice, alert_level, alert_name, wind_speed, p
     confidence = min(((total_risk-8.5)/8.5*100,100))
 
     if len(flags)>0:
-        return flags, confidence #this is temporary
+        return flags
 
     return confidence
 
