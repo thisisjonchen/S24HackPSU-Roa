@@ -231,14 +231,14 @@ def predict():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-# our_output = is_dangerous() #our confidence
-# their_output = lastConfidenceScore #their confidence
+our_output = is_dangerous() #our confidence
+their_output = lastConfidenceScore #their confidence
 @app.route("/give_result", methods=["POST"])
 def give_result():
     client = OpenAI(api_key = "API_KEY_HERE")
 
-    our_output = ["too windy, thunderstorm"] #our confidence
-    their_output = 10 #their confidence
+    # our_output = ["too windy, thunderstorm"] #our confidence
+    # their_output = 10 #their confidence
     message = "write a message with confidence of "
 
     if isinstance(our_output,list):
@@ -266,14 +266,10 @@ def give_result():
             ],
             model="gpt-3.5-turbo",
         )
-        chat_completion.choices = []
-        chat_completion.choices[0] = "it's sketchy"
-        temp = 'its sketchy'
 
     response = {
         'confidence': confidence,
         'message': chat_completion.choices[0].message.content
-        # 'message': temp
     }
 
     return jsonify(response)
@@ -283,4 +279,4 @@ def give_result():
 
 if __name__ == '__main__':
     app.run(debug=True)
-    print(give_result())
+    # print(give_result())
