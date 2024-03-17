@@ -61,6 +61,7 @@ if __name__ == '__main__':
     wind_speed=0
     precipitation_rate = 0
     speed_limit = 35
+    is_black_ice = 0
     print("When the earth melts back and the weather is clear, we get: ",end="")
     print(is_dangerous.is_dangerous(road_temp, 
                                             is_black_ice,
@@ -80,7 +81,7 @@ if __name__ == '__main__':
                                             precipitation_rate, 
                                             speed_limit))
     print()
-    precipitaion_rate = 3
+    precipitation_rate = 3
     print("Then to 'Moderate Rain', confidence falls to: ",end="")
     print(is_dangerous.is_dangerous(road_temp, 
                                             is_black_ice,
@@ -90,6 +91,7 @@ if __name__ == '__main__':
                                             precipitation_rate, 
                                             speed_limit))
     print()
+    precipitation_rate = 8
     print("Then to 'Heavy Rain', confidence falls to: ",end="")
     print(is_dangerous.is_dangerous(road_temp, 
                                             is_black_ice,
