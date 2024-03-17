@@ -1,6 +1,7 @@
 #python -m venv openai-env
 #openai-env\Scripts\activate
 #pip install --upgrade openai
+#python ChatgptOutput.py
 
 from openai import OpenAI
 client = OpenAI(api_key = "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")
