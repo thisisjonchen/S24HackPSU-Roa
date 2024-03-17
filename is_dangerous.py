@@ -50,5 +50,5 @@ def is_dangerous(road_temp, is_black_ice, alert_level, alert_name, wind_speed, p
     if len(flags)>0:
         return flags
 
-    return confidence
+    return round(confidence,2)
 
