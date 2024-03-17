@@ -23,6 +23,11 @@ Analyzes historical accident data and patterns, traffic density, weather, and mo
 **Deployment:** Vercel (Frontend)\
 **APIs:** ChatGPT 3.5 Turbo (OpenAI), OpenWeather, Google Maps
 
+## Detecting Safety
+We are using two separate algorithms that determine whether or not the road will be accident prone, warning the user if so.
+One algorithm uses ML that uses images from the phone that has been trained from images that accidents have occured, and the other
+uses API calls using road conditions that determines if the weather or road conditions are dangerous to drive on.
+
 
 ## Acknowledgements
 **The team:** Scott Garcia, Jon Chen, Vinh Ngo, Matt Witmer, Caleb Kendig\
