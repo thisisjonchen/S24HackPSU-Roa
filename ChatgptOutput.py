@@ -25,7 +25,14 @@ def ChatGPT(our_confidence,their_confidence):
             messages=[
                 {
                     "role": "system",
-                    "content": "You are writing a message to someone currently driving a car to alert the driver that the road situation they are in looks like a situation in which a crash has either happened or is likely to happen.  The message should only be a few words long and does not need to have proper grammar. I will provide a confidence level for your response on a scale of 0-100. A response with higher confidence should be more assertive and urgent, while a message with low confidence should be a weaker, less stressed recommendation. An example of a message with high confidence is 'URGENT, DRIVE SAFE' while an example for a message with low confidence is 'caution.'"
+                    "content": """You are writing a message to someone currently driving a car to alert the driver 
+                                that the road situation they are in looks like a situation in which a crash has either 
+                                happened or is likely to happen.  The message should only be a few words long and does 
+                                not need to have proper grammar. I will provide a confidence level for your response
+                                on a scale of 0-100. A response with higher confidence should be more assertive and urgent, 
+                                while a message with low confidence should be a weaker, less stressed recommendation. 
+                                An example of a message with high confidence is 'URGENT, DRIVE SAFE' while an example 
+                                for a message with low confidence is 'caution.'"""
                 },
                 {
                     "role": "user",
