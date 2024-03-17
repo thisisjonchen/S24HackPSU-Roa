@@ -102,12 +102,18 @@ function WebcamRecorder() {
 
     return (
         <div>
-            <video className="recording" ref={videoRef} autoPlay></video>
+            <div>
+                {isRecording ? <video className="recording" ref={videoRef} autoPlay></video> : null}
+            </div>
             <canvas ref={canvasRef} style={{ display: 'none' }}></canvas>
             <div>
                 {isRecording ? (
                     <button className="button stop" onClick={stopRecording}>Stop Recording</button>
-                ) : null}
+                ) :  (
+                    <div className="container">
+                        <h2 className="alignMiddle stack" style={{color:"white"}}>Not working?<span style={{fontWeight:"bold"}}>Check your phone!</span></h2>
+                    </div>
+                )}
             </div>
         </div>
     );
