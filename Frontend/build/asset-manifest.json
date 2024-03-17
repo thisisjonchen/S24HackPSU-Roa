@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/thisisjonchen/Roa/static/css/main.1dff07d3.css",
-    "main.js": "/thisisjonchen/Roa/static/js/main.89b893a4.js",
-    "static/media/mockup2.png": "/thisisjonchen/Roa/static/media/mockup2.7d223c51016ba25f3dd5.png",
-    "static/media/mockup1.png": "/thisisjonchen/Roa/static/media/mockup1.d44688daf343d07bdff3.png",
-    "index.html": "/thisisjonchen/Roa/index.html",
-    "main.1dff07d3.css.map": "/thisisjonchen/Roa/static/css/main.1dff07d3.css.map",
-    "main.89b893a4.js.map": "/thisisjonchen/Roa/static/js/main.89b893a4.js.map"
+    "main.css": "/static/css/main.1dff07d3.css",
+    "main.js": "/static/js/main.7266dd9b.js",
+    "static/media/mockup2.png": "/static/media/mockup2.7d223c51016ba25f3dd5.png",
+    "static/media/mockup1.png": "/static/media/mockup1.d44688daf343d07bdff3.png",
+    "index.html": "/index.html",
+    "main.1dff07d3.css.map": "/static/css/main.1dff07d3.css.map",
+    "main.7266dd9b.js.map": "/static/js/main.7266dd9b.js.map"
   },
   "entrypoints": [
     "static/css/main.1dff07d3.css",
-    "static/js/main.89b893a4.js"
+    "static/js/main.7266dd9b.js"
   ]
 }
