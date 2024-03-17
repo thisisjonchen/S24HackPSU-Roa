@@ -1,13 +1,10 @@
 import vehicle_counting
 import requests
-from time import sleep
-from glob import glob
 
 google_api_key = ""
 weather_api_key = ""
 
 #INSERT PATH HERE
-path = "downloads"
 
 road_temp = 280 #hardcoded number in Kelvin to represent 
 is_black_ice = 0 #0 if little to no chance of black ice, 16 if chance of black ice on road
@@ -18,17 +15,17 @@ speed_limit = 45 #speed limit of the road the car is driving on
 alert_name = "" # a string which represents any possible weather condition
 #for getting whether or not the user is in a city
 
-def vehicle_num_danger(path: str) -> bool:
-        images = glob(path)
-        vehicle_count = vehicle_counting.count_vehicles(images)
+def vehicle_num_danger(image: str) -> bool:
+        vehicle_count = vehicle_counting.count_vehicles(image)
         if vehicle_count >= 5:
             return True
         else:
             return False
 
 def get_weather_conditions(location: tuple) -> tuple:
-    
-    url = f"https://api.openweathermap.org/data/2.5/roadrisk?appid={{weather_api_key}}"
+    lon, lat = location
+    url = f"https://api.openweathermap.org/data/2.5/roadrisk?appid={weather_api_key}&lat={lat}&lon={lon}"
+    print(url)
     response = requests.get(url)
     if response.status_code == 200:
         data = response.json()
