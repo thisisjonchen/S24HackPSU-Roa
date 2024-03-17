@@ -21,7 +21,7 @@ Analyzes historical accident data and patterns, traffic density, weather, and mo
 **Front-end:** Javascript (React)\
 **Back-end:** Python (with OpenCV)\
 **Deployment:** Vercel (Frontend)\
-**APIs:** ChatGPT 3.5 Turbo (OpenAI), OpenWeather, Google Maps
+**APIs:** ChatGPT 3.5 Turbo (OpenAI), OpenWeather, Google Maps, Custom-Made AI (danger road detector)
 
 ## Detecting Safety
 We are using two separate algorithms that determine whether or not the road will be accident prone, warning the user if so.
@@ -55,9 +55,11 @@ If confidence is above 0, then conditions are unsafe
 Since bad conditions can be handled if the speed limit is low, or if less worse conditions can still be dangerous because you are traveling quickly
 
 ## Challenges
-Connecting the front/back end
-Training the AI model
+Connecting the front/back end \
+Training the AI model \
  -Used a dataset that had 7.9 million images
+
+ 
 
 
 ## Acknowledgements
