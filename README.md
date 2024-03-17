@@ -33,10 +33,10 @@ Using your phone camera, it captures an image and is analyzed using a custom-tra
 
 ## Part 2: Weather Analysis
 GPS would be used to get conditions of the road and returns a confidence interval from -100 to 100 
-(-100 being very confident it is safe, 100 being very confident that it is dangerous)
+(-100 being very confident it is safe, 100 being very confident that it is dangerous) \
 Depending on certain conditions, it can instantly flag with 100 confidence (it can be multiple conditions) to create a message for the user to be cautious due to the flags
 Eg; black ice warning has been given 
-Calculated using the formula of 
+Calculated using the formula of |total risk - risk_0| / risk_0
 total risk is determined by a decision matrix of road conditions
 risk_0 is the average total risk (half of max total risk) – eg; if conditions are ideal ill be 0 - 8.5 = -100
 if confidence is below 0, then it is saying conditions are safe 
@@ -52,7 +52,7 @@ if confidence is above 0, then conditions are unsafe
   -If the road temp is below freezing, return a 2 \
   -Wind speed (meters/second) – 2 \
   -Speed of the car is accounted as a multiplier \
-  -Since bad conditions can be handled if the speed limit is low, or if less worse conditions can still be dangerous because you are traveling quickly
+Since bad conditions can be handled if the speed limit is low, or if less worse conditions can still be dangerous because you are traveling quickly
 
 ## Challenges
 Connecting the front/back end
