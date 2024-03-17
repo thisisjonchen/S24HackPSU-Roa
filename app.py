@@ -5,6 +5,7 @@ from flask_cors import CORS
 from keras.models import load_model
 import cv2
 import numpy as np
+from openai import OpenAI
 
 app = Flask(__name__)
 
@@ -28,12 +29,12 @@ def vehicle_num_danger(image: str) -> bool:
             return True
         else:
             return False
+
 @app.route('/get_data')
 def get_data():
     data = {'latitude': -1, 'longitude': -1}
     return jsonify(data)
 
-@app.route('/get_weather_conditions')
 def get_weather_conditions():
     location_data_response = get_data()
     location_data = location_data_response.get_json()
@@ -63,7 +64,6 @@ def get_weather_conditions():
           wind_speed: {wind_speed}
     """)
 
-@app.route('/get_speed_limit')
 def get_speed_limit():
     location_data_response = get_data()
     location_data = location_data_response.get_json()
@@ -87,9 +87,6 @@ def get_speed_limit():
           alert_name: {alert_name}
           wind_speed: {wind_speed}
     """)
-
-
-
 
 #calculators to determine weather conditions    
 FREEZING_TEMP_KELVIN = 273.5
@@ -147,18 +144,7 @@ def is_dangerous():
 
     return confidence
 
-our_output = is_dangerous() #our confidence
-their_output = 100 #their confidence
-message = "You have to write a message to the driver of a car telling them to be careful due to "
-if isinstance(our_output,list):
-    confidence = (100+their_output)/2.0
-    for reason in our_output:
-        message+=str(reason)+", "
-else:
-    confidence = (our_output+their_output)/2.0
-    message+="potentially dangerous road situation "
-
-
+lastConfidenceScore = 0
 
 #image detection algorithm
 def load_labels(labels_path):
@@ -190,12 +176,43 @@ def predict_road_safety(image):
 
     # Format the confidence score based on the class name
     if "Safe" in class_name:
+        confidence_score = -100 * np.round(confidence_score, 2)
+    else:
+        confidence_score = np.round(confidence_score, 2) * 100
+    #last_Confidence_score = confidence_score #to use globally for stuff
+    # Return the class name and confidence score
+    return class_name[2:], str(confidence_score)
+
+
+def predict_road_safety(image):
+    # Load the model
+    model = load_model("keras_Model.h5", compile=False)
+
+    # Load the labels
+    class_names = load_labels("labels.txt")
+
+    # Resize the image
+    image = cv2.resize(image, (224, 224), interpolation=cv2.INTER_AREA)
+
+    # Make the image a numpy array and reshape it to the model's input shape
+    image = np.asarray(image, dtype=np.float32).reshape(1, 224, 224, 3)
+
+    # Normalize the image array
+    image = (image / 127.5) - 1
+
+    # Predict the model
+    prediction = model.predict(image)
+    index = np.argmax(prediction)
+    class_name = class_names[index]
+    confidence_score = prediction[0][index]
+
+    # Format the confidence score based on the class name
+    if "Safe" in class_name:
         confidence_score = -1 * np.round(confidence_score, 2)
     else:
         confidence_score = np.round(confidence_score, 2)
-
+    return confidence_score #to use globally for stuff
     # Return the class name and confidence score
-    return class_name[2:], str(confidence_score)
 
 @app.route("/predict", methods=["POST"])
 def predict():
@@ -214,5 +231,56 @@ def predict():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
+# our_output = is_dangerous() #our confidence
+# their_output = lastConfidenceScore #their confidence
+@app.route("/give_result", methods=["POST"])
+def give_result():
+    client = OpenAI(api_key = "API_KEY_HERE")
+
+    our_output = ["too windy, thunderstorm"] #our confidence
+    their_output = 10 #their confidence
+    message = "write a message with confidence of "
+
+    if isinstance(our_output,list):
+        confidence = (100+their_output)/2.0
+        message+= str(confidence)+" with the reason being due to "
+        for reason in our_output:
+            message+=str(reason)+", "
+
+    else:
+        confidence = (our_output+their_output)/2.0
+        message+=str(confidence)
+
+
+    if(confidence>0):
+        chat_completion = client.chat.completions.create(
+            messages=[
+                {
+                    "role": "system",
+                    "content": "You are writing a message to someone currently driving a car to alert the driver that the road situation they are in looks like a situation in which a crash has either happened or is likely to happen.  The message should only be a few words long and does not need to have proper grammar. I will provide a confidence level for your response on a scale of 0-100. A response with higher confidence should be more assertive and urgent, while a message with low confidence should be a weaker, less stressed recommendation. An example of a message with high confidence is 'URGENT, DRIVE SAFE' while an example for a message with low confidence is 'caution.'"
+                },
+                {
+                    "role": "user",
+                    "content": message,
+                }
+            ],
+            model="gpt-3.5-turbo",
+        )
+        chat_completion.choices = []
+        chat_completion.choices[0] = "it's sketchy"
+        temp = 'its sketchy'
+
+    response = {
+        'confidence': confidence,
+        'message': chat_completion.choices[0].message.content
+        # 'message': temp
+    }
+
+    return jsonify(response)
+        
+
+
+
 if __name__ == '__main__':
     app.run(debug=True)
+    print(give_result())
