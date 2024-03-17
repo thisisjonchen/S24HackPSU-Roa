@@ -40,7 +40,7 @@ Calculated using the formula of |total risk - risk_0| / risk_0 \
   -total risk is determined by a decision matrix of road conditions \
   -risk_0 is the average total risk (half of max total risk) – eg; if conditions are ideal it'll be 0 - 8.5 = -100 \
 If confidence is below 0, then it is saying conditions are safe \ 
-If confidence is above 0, then conditions are unsafe \
+If confidence is above 0, then conditions are unsafe 
 
 1. Prioritized what conditions are most important for the user to know from a scale from 1 to 5 (1 being non-important, 5 being the most important) \
   -Alert level (the severity of the weather alert) – 5 \
