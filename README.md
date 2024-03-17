@@ -21,7 +21,8 @@ Analyzes historical accident data and patterns, traffic density, weather, and mo
 **Front-end:** Javascript (React)\
 **Back-end:** Python (with OpenCV)\
 **Deployment:** Vercel (Frontend)\
-**APIs:** ChatGPT 3.5 Turbo (OpenAI), OpenWeather, Google Maps, Custom-Made AI (danger road detector)
+**APIs:** ChatGPT 3.5 Turbo (OpenAI), OpenWeather, Google Maps, Custom-Made AI (danger road detector)\
+**Assets:** https://i.stack.imgur.com/MnyxU.gif (loading)
 
 ## Detecting Safety
 We are using two separate algorithms that determine whether or not the road will be accident prone, warning the user if so.
