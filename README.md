@@ -71,7 +71,7 @@ Allowing different users to be supported with the algorithms (cyclists, buses, t
 Made with ❤️ from Happy Valley
 
 ## Demo Steps
-  -Download the [Road Classification]([url](https://github.com/thisisjonchen/S24HackPSU-Roa/tree/main/Road%20Classification)https://github.com/thisisjonchen/S24HackPSU-Roa/tree/main/Road%20Classification) folder
-  -Run the [classification_demo.py]([url](https://github.com/thisisjonchen/S24HackPSU-Roa/blob/main/Road%20Classification/classification_demo.py)https://github.com/thisisjonchen/S24HackPSU-Roa/blob/main/Road%20Classification/classification_demo.py) script
-  -Open Google Earth and follow the program's window capture instructions
+  -Download the [Road Classification]([url](https://github.com/thisisjonchen/S24HackPSU-Roa/tree/main/Road%20Classification)https://github.com/thisisjonchen/S24HackPSU-Roa/tree/main/Road%20Classification) folder\
+  -Run the [classification_demo.py]([url](https://github.com/thisisjonchen/S24HackPSU-Roa/blob/main/Road%20Classification/classification_demo.py)https://github.com/thisisjonchen/S24HackPSU-Roa/blob/main/Road%20Classification/classification_demo.py) script\
+  -Open Google Earth and follow the program's window capture instructions\
   -Watch the model work its magic!
