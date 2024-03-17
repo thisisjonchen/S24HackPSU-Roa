@@ -1,0 +1,2 @@
+0 Safe Road
+1 Dangerous Road
