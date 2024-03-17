@@ -38,7 +38,7 @@ Depending on certain conditions, it can instantly flag with 100 confidence (it c
   -Eg; black ice warning has been given 
 Calculated using the formula of |total risk - risk_0| / risk_0 \
   -total risk is determined by a decision matrix of road conditions \
-  -risk_0 is the average total risk (half of max total risk) – eg; if conditions are ideal ill be 0 - 8.5 = -100 \
+  -risk_0 is the average total risk (half of max total risk) – eg; if conditions are ideal it'll be 0 - 8.5 = -100 \
 If confidence is below 0, then it is saying conditions are safe \ 
 If confidence is above 0, then conditions are unsafe \
 
