@@ -25,6 +25,7 @@ def vehicle_num_danger(image: str) -> bool:
 def get_weather_conditions(location: tuple) -> tuple:
     lon, lat = location
     url = f"https://api.openweathermap.org/data/2.5/roadrisk?appid={weather_api_key}&lat={lat}&lon={lon}"
+    #url = f"https://api.openweathermap.org/data/2.5/weather?appid={weather_api_key}&lat={lat}&lon={lon}"
     print(url)
     response = requests.get(url)
     if response.status_code == 200:
@@ -33,12 +34,17 @@ def get_weather_conditions(location: tuple) -> tuple:
         print("Reponse failed with status code", response.status_code)
     data = response.json()
 
-    precipitation_rate = data['weather']['precipitation_intensity']
+    precipitation_rate = data['weather']['precipitation_intensity'] 
+    #precipitation_rate = data['rain']['1h']
     road_temp = data['road']['temp']
+    #road_temp = ['main']['temp']
     is_black_ice = data['road']['state']
+    #is_black_ice = 0 #hardcoding black ice since data is not given in free version
     alert_level = data['alerts']['event']
     alert_name = data['alerts']['name']
+    #^ would need to be hardcoded or itense algorithm from data['weather']['id']
     wind_speed  = data['weather']['wind_speed']
+    #wind_speed = data['wind']['speed']
     print(f"""DEBUG: rain: {precipitation_rate}
           black_ice: {is_black_ice}
           alert_level: {alert_level}
