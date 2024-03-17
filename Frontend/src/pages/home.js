@@ -1,6 +1,6 @@
 import Warning from "../assets/mockup1.png"
 import AlertWarn from "../assets/mockup2.png"
-
+//TODO REPLACE URL AFTER TESTING!
 function Home() {
     return (
         <div className="container alignMiddle">
@@ -19,10 +19,10 @@ function Home() {
                 </div>
             </div>
             <div className="descriptionContainer alignMiddle stack">
-                <div className="description" style={{paddingBottom:"50px"}}>
+                <div className="description">
                     <div className="column alignMiddle">
                         <div className="stack">
-                            <h1>Let's face it,<span style={{fontWeight:"normal"}}><br/>you're clueless.</span></h1>
+                            <h1>Let's face it,<span style={{fontWeight:"normal"}}> you're clueless.</span></h1>
                             <h2>But so are we. That's why we built <span style={{fontWeight:"bold"}}>Roa</span>, which uses machine learning to actively keep you alert. <br/><br/>You're welcome.</h2>
                         </div>
                     </div>
@@ -52,7 +52,7 @@ function Home() {
                         <h2 className="centerText">[Roa]</h2>
                         <h1 className="centerText">Drive smarter,<span style={{fontWeight:"normal"}}><br/>not harder.</span></h1>
                         <button className="button launch" onClick={() => window.location.replace("https://www.roai.tech/record")}>Launch Now</button>
-                        <h6 className="centerText">Built with ❤️ from Happy Valley</h6>
+                        <h5 className="centerText">Built with ❤️ from Happy Valley</h5>
                     </div>
                 </div>
             </div>

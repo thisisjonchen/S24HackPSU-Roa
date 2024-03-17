@@ -1,5 +1,6 @@
 import WebcamRecorder from "../components/recorder";
 import {useEffect, useRef} from "react";
+import LocationTracker from "../components/location";
 
 function Record() {
     const videoRef = useRef(null);
@@ -29,6 +30,7 @@ function Record() {
                 <div ref={loadingRef} id="loading"></div>
                 <div ref={videoRef} id="video" style={{overflow:"hidden"}}>
                     <WebcamRecorder/>
+                    <LocationTracker/>
                 </div>
             </div>
         </div>

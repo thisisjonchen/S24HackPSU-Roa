@@ -50,11 +50,11 @@ function WebcamRecorder() {
             };
 
             videoRef.current.srcObject = newStream;
-            captureInterval.current = setInterval(captureImage, 5000);
+            captureInterval.current = setInterval(captureImage, 5000); // capture img every 5 secs
         } catch (error) {
             console.error('Error accessing webcam:', error);
         }
-    };
+    }
 
     function stopRecording() {
         if (mediaRecorderRef.current && mediaRecorderRef.current.state !== 'inactive') {
@@ -69,9 +69,10 @@ function WebcamRecorder() {
             clearInterval(captureInterval.current);
         }
         setIsRecording(false);
-        window.location.replace("http://localhost:3000/")
-    };
+        window.location.replace("https://www.roai.tech/") //TODO REPLACE URL AFTER TESTING!
+    }
 
+    // captures image (every 5 seconds) and sends to backend for processing
     function captureImage() {
         const canvas = canvasRef.current;
         const video = videoRef.current;
@@ -80,8 +81,24 @@ function WebcamRecorder() {
         canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
         const imageDataUrl = canvas.toDataURL('image/jpeg');
         console.log('Captured image:', imageDataUrl);
-    };
+        const formData = new FormData();
+        formData.append('image', imageDataUrl);
 
+        ///fetch("https://example.com/upload", {
+        ///    method: 'POST',
+        ///    body: formData
+        ///})
+        ///    .then(response => {
+        ///        if (response.ok) {
+        ///            console.log('Image uploaded successfully.');
+        ///        } else {
+        ///            console.error('Failed to upload image:', response.statusText);
+        ///        }
+        ///    })
+        ///    .catch(error => {
+        ///        console.error('Error uploading image:', error);
+        ///    });
+    }
 
     return (
         <div>
@@ -94,6 +111,6 @@ function WebcamRecorder() {
             </div>
         </div>
     );
-};
+}
 
 export default WebcamRecorder;
